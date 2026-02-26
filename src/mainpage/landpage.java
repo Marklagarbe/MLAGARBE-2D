@@ -78,7 +78,7 @@ public class landpage extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("WELCOME TO S1M SPORTS CARS");
+        jLabel14.setText("WELCOME TO MS SPORTS CARS");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(0, 20, 530, 29);
 

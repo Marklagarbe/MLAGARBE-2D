@@ -36,7 +36,6 @@ public class registerpage extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         uemail = new javax.swing.JTextField();
-        pass = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -44,6 +43,7 @@ public class registerpage extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        pass = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,15 +70,6 @@ public class registerpage extends javax.swing.JFrame {
         });
         jPanel1.add(uemail);
         uemail.setBounds(440, 330, 210, 30);
-
-        pass.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pass);
-        pass.setBounds(440, 380, 210, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,6 +139,8 @@ public class registerpage extends javax.swing.JFrame {
         jLabel15.setText("User name :");
         jPanel1.add(jLabel15);
         jLabel15.setBounds(360, 280, 80, 30);
+        jPanel1.add(pass);
+        pass.setBounds(440, 380, 210, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,10 +270,6 @@ public class registerpage extends javax.swing.JFrame {
       login.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
-
     private void uemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uemailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_uemailActionPerformed
@@ -349,7 +338,7 @@ public class registerpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField pass;
+    private javax.swing.JPasswordField pass;
     private javax.swing.JTextField uemail;
     // End of variables declaration//GEN-END:variables
 

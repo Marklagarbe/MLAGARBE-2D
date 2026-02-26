@@ -10,9 +10,10 @@ package mainpage;
 
 
 
+import admin.Dashboard;
 import config.config;
-import user.userdashboard;
-import admin.admindshboard;
+import user.Feed;
+import admin.users;
 import config.UserSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -199,7 +200,7 @@ public class loginform extends javax.swing.JFrame {
         Connection conn = con.connectDB();
         
         // ✅ SELECT ALL USER INFO including us_id
-        String sql = "SELECT us_id, username, email, role, status FROM tbl_user WHERE email = ? AND pass = ?";
+       String sql = "SELECT us_id, username, email, role, status, profile_picture FROM tbl_user  WHERE email = ? AND pass = ?";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         
         pstmt.setString(1, email);
@@ -233,7 +234,8 @@ public class loginform extends javax.swing.JFrame {
                 
                 // ✅ SAVE USER DATA TO SINGLETON
                 UserSession session = UserSession.getInstance();
-                session.setUserData(userId, username, userEmail, role, status);
+               String profilePicture = rs.getString("profile_picture");
+               session.setUserData(userId, username, userEmail, role, status, profilePicture);
                 
                 // CLOSE LOGIN WINDOW
                 this.dispose();
@@ -241,17 +243,17 @@ public class loginform extends javax.swing.JFrame {
                 // REDIRECT BASED ON ROLE
                 if (role.equalsIgnoreCase("admin")) {
                     JOptionPane.showMessageDialog(null, "Welcome Admin!");
-                    admindshboard ad = new admindshboard();
+                    Dashboard ad = new Dashboard();
                     ad.setVisible(true);
                     
                 } else if (role.equalsIgnoreCase("user")) {
                     JOptionPane.showMessageDialog(null, "Welcome " + username + "!");
-                    userdashboard ud = new userdashboard();
+                    Feed ud = new Feed();
                     ud.setVisible(true);
                     
                 } else {
                     JOptionPane.showMessageDialog(null, "Welcome!");
-                    userdashboard ud = new userdashboard();
+                    Feed ud = new Feed();
                     ud.setVisible(true);
                 }
             }
@@ -317,7 +319,7 @@ public class loginform extends javax.swing.JFrame {
             
         
        this.dispose();  
-       userdashboard log = new userdashboard();
+       Feed log = new Feed();
        log.setVisible(true);
         }
     }                                     
